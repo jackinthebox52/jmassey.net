@@ -1,0 +1,7 @@
+{
+    "title": "Building a Text-to-SQL System for MMA Statistics",
+    "description": "A proof of concept that uses LLMs to translate natural language into SQL queries for accurate sports statistics",
+    "date": "2025-10-22",
+    "tags": ["Programming", "AI", "SQL", "NLP", "Machine Learning"],
+    "status": "published"
+}
