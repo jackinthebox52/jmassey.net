@@ -5,41 +5,49 @@
     margin-top: 2rem;
 }
 
+/* Add this to your project-card.css file */
+
 .project-card {
     background-color: var(--azure-web);
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid var(--viridian);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 250px; /* Set a minimum height for all cards */
+    cursor: pointer; /* Add pointer cursor to the entire card */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Add shadow on hover for better feedback */
 }
 
-.project-card h3 {
-    color: var(--viridian);
-    margin-bottom: 1rem;
+/* Make the entire card clickable by adding a pseudo-element over it */
+.project-card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
 }
 
-.project-card p {
-    margin-bottom: 1.5rem;
+/* Ensure the "Learn More" button is still usable by placing it above the overlay */
+.project-meta .btn {
+    position: relative;
+    z-index: 2; /* Higher than the card-link overlay */
 }
 
-.project-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 20px;
-}
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
+/* Make sure text remains selectable */
+.project-card h3, 
+.project-card p,
+.project-card .project-tags,
+.project-card .project-meta span {
+    position: relative;
+    z-index: 2;
 }
 
 .tag {
@@ -59,8 +67,19 @@
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s;
+    cursor: pointer
 }
 
 .btn:hover {
     background-color: var(--cambridge-blue);
+}
+
+
+.hidden {
+    display: none;
+}
+
+.show-more-container {
+    margin-top: 2rem;
+    text-align: center;
 }

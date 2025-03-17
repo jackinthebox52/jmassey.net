@@ -24,7 +24,7 @@
    git init
    git add .
    git commit -m "Initial commit"
-   git remote add origin https://github.com/yourusername/blog-jmasseynet.git
+   git remote add origin https://github.com/jackinthebox52/jaedawilson.net.git
    git push -u origin main
    ```
 

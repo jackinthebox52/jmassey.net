@@ -2,7 +2,9 @@ cf-docker/
 public/
 .wrangler/
 node_modules/
+backup-content/
 .env.*
 .env
 *.log
 npm-debug.log*
+code.md

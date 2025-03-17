@@ -128,55 +128,73 @@ async function generateProjectPages() {
 async function generateHomePage(projects) {
     // Sort projects by date (newest first)
     projects.sort((a, b) => new Date(b.date) - new Date(a.date));
-
+    
     // Read index template
     const indexTemplate = await readTemplate('index');
-
+    
     // Generate project cards HTML
-    const projectCardsHtml = projects.map((project, index) => {
-        const isHidden = index >= 5 ? ' hidden' : '';
-
+    let projectCardsHtml = '';
+    let showMoreBtn = '';
+    
+    // If there are no projects, show an empty state card
+    if (projects.length === 0) {
+      projectCardsHtml = `
+        <div class="project-card">
+          <h3>Empty</h3>
+          <p>I have not yet posted any book reviews. Check back soon!</p>
+        </div>
+      `;
+    } else {
+      // Generate cards for existing projects
+      projectCardsHtml = projects.map((project, index) => {
+        const isHidden = index >= 6 ? ' hidden' : '';
+        
         const tagsHtml = project.tags
-            .map(tag => `<span class="tag">${tag}</span>`)
-            .join('');
-
+          .map(tag => `<span class="tag">${tag}</span>`)
+          .join('');
+        
         const formattedDate = new Date(project.date).toLocaleDateString();
-
+        
         return `
-      <div class="project-card${isHidden}" data-index="${index}">
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        <div class="project-tags">
-          ${tagsHtml}
-        </div>
-        <div class="project-meta">
-          <span>${formattedDate}</span>
-          <a href="${project.url}" class="btn">Learn More</a>
-        </div>
-      </div>
-    `;
-    }).join('');
-
-    // Generate show more button if needed
-    const showMoreBtn = projects.length > 5 ? `
-    <div class="show-more-container">
-      <button id="showMoreBtn" class="btn">Show More Projects</button>
-    </div>
-  ` : '';
-
+          <div class="project-card${isHidden}" data-index="${index}">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                ${tagsHtml}
+              </div>
+              <div class="project-meta">
+                <span>${formattedDate}</span>
+                <a href="${project.url}" class="btn">Read</a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      
+      
+      if (projects.length > 6) {
+        showMoreBtn = `
+          <div class="show-more-container">
+            <a id="showMoreBtn" class="btn">Show More Reviews</a>
+          </div>
+        `;
+      }
+    }
+    
     // Apply template
     const html = applyTemplate(indexTemplate, {
-        projectCards: projectCardsHtml,
-        showMoreBtn: showMoreBtn,
-        currentYear: new Date().getFullYear()
+      projectCards: projectCardsHtml,
+      showMoreBtn: showMoreBtn,
+      currentYear: new Date().getFullYear()
     });
-
+    
     // Write output file
     const outputPath = path.join(publicDir, 'index.html');
     await fs.writeFile(outputPath, html);
-
+    
     console.log(`Generated: ${outputPath}`);
-}
+  }
 
 // Copy static assets
 async function copyStaticAssets() {
