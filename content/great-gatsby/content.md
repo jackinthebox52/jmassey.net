@@ -1,11 +1,3 @@
-# The Great Gatsby
-
-## Book Information
-* **Author:** F. Scott Fitzgerald
-* **Published:** 1925
-* **Genre:** Fiction, Classic
-* **Pages:** 180
-
 ## Summary
 The Great Gatsby tells the story of eccentric millionaire Jay Gatsby and his obsession with the beautiful Daisy Buchanan. Set in the Roaring Twenties, the novel explores themes of wealth, class, love, and the American Dream.
 
