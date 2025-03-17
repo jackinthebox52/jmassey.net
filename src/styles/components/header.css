@@ -1,5 +1,5 @@
 header {
-    background-color: var(--viridian);
+    background-color: var(--primary-dark);
     color: white;
     padding: 1rem 0;
     margin-bottom: 2rem;
@@ -25,7 +25,7 @@ nav {
 .nav-brand {
     font-size: 1.5rem;
     font-weight: 600;
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -37,21 +37,22 @@ nav ul {
     margin: 0;
     padding: 0;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: right;
 }
 
 nav a {
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: background-color 0.3s;
+    font-weight: 500;
 }
 
 nav a:hover {
-    background-color: var(--cambridge-blue);
+    background-color: var(--secondary-dark);
 }
 
 nav a.active {
-    background-color: var(--cambridge-blue);
+    background-color: var(--secondary-dark);
 }

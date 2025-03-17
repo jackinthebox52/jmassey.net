@@ -4,15 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}} - jaedawilson.net</title>
-  <!-- Load shared styles first -->
-  <link rel="stylesheet" href="/styles/shared.css">
-  <!-- Load header component styles -->
-  <link rel="stylesheet" href="/styles/components/header.css">
-  <!-- Load page-specific styles -->
-  <link rel="stylesheet" href="/styles/components/project.css">
+  <link rel="stylesheet" href="/styles/shared.css"> <!-- Load shared styles first -->
+  <link rel="stylesheet" href="/styles/components/header.css"> <!-- Load header component styles -->
+  <link rel="stylesheet" href="/styles/components/project.css"> <!-- Load page-specific styles -->
   <link rel="stylesheet" href="/styles/markdown.css">
-  <!-- Load responsive styles last -->
-  <link rel="stylesheet" href="/styles/responsive.css">
+  <link rel="stylesheet" href="/styles/responsive.css"> <!-- Load responsive styles last (Not sure if these are used at all TODO: Check) -->
+  <link rel="stylesheet" href="/styles/components/footer.css"> <!-- Load footer styles -->
 </head>
 <body>
   <header>
@@ -30,7 +27,7 @@
       <section class="project-header">
         <h1>{{title}}</h1>
         <div class="project-meta">
-          <span>{{date}}</span> |
+          <span>{{date}}</span>
           {{tags}}
         </div>
         <p>{{description}}</p>

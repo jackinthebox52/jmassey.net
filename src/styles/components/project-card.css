@@ -6,10 +6,10 @@
 }
 
 .project-card {
-    background-color: var(--azure-web);
+    background-color: var(--primary-background);
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid var(--viridian);
+    border-left: 4px solid var(--primary-dark);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
 }
 
 .project-card h3 {
-    color: var(--viridian);
+    color: var(--primary-dark);
     margin-bottom: 1rem;
     position: relative;
     z-index: 2;
@@ -60,7 +60,7 @@
 
 .tag {
     background-color: var(--mint-green);
-    color: var(--viridian);
+    color: var(--primary-dark);
     padding: 0.2rem 0.8rem;
     border-radius: 1rem;
     font-size: 0.9rem;
@@ -80,7 +80,7 @@
 .btn {
     display: inline-block;
     padding: 0.5rem 1.5rem;
-    background-color: var(--viridian);
+    background-color: var(--primary-dark);
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -91,7 +91,7 @@
 }
 
 .btn:hover {
-    background-color: var(--cambridge-blue);
+    background-color: var(--secondary-dark);
 }
 
 .hidden {

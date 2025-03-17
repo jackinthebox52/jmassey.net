@@ -1,20 +1,29 @@
 .project-header {
     text-align: center;
     padding: 3rem 0;
-    background-color: var(--azure-web);
+    background-color: var(--primary-dark);
     margin: -2rem -2rem 2rem -2rem;
     border-radius: 8px 8px 0 0;
-    border-bottom: 3px solid var(--cambridge-blue);
+    border-bottom: 3px solid var(--secondary-dark);
 }
 
 .project-header h1 {
-    color: var(--viridian);
+    color: whitesmoke;
     margin-bottom: 1rem;
     font-size: 2.5rem;
     font-weight: 700;
 }
 
 .project-meta {
-    color: #666;
-    margin-bottom: 2rem;
+    color: whitesmoke;
+    margin-bottom: 1em;
+}
+
+
+/* Project header description */
+.project-header p {
+    margin: 0 2rem;
+    padding: 1rem 0 0;
+    color: whitesmoke;
+    border-top: 1px solid whitesmoke;
 }

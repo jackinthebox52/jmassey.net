@@ -121,7 +121,7 @@ async function generateProjectPages() {
 
             // Format tags
             const tagsHtml = metadata.tags
-                .map(tag => `<span class="tag">${tag}</span>`)
+                .map(tag => `<span class="tag"> | ${tag}</span>`)
                 .join('');
 
             // Apply template

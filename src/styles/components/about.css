@@ -1,9 +1,10 @@
 .profile-section {
     text-align: center;
     padding: 3rem 0;
-    background-color: var(--azure-web);
+    background-color: var(--primary-dark);
     margin: -2rem -2rem 2rem -2rem;
     border-radius: 8px 8px 0 0;
+    color: whitesmoke;
 }
 
 .bio-grid {
@@ -14,10 +15,10 @@
 }
 
 .bio-card {
-    background-color: var(--azure-web);
+    background-color: var(--primary-background);
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid var(--viridian);
+    border-left: 4px solid var(--primary-dark);
 }
 
 .skills-list {

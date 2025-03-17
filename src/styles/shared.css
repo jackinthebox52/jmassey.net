@@ -1,9 +1,16 @@
-:root {
-    --viridian: #6b9080;
-    --cambridge-blue: #a4c3b2;
+/*:root {
+    --primary-dark: #6b9080;
+    --secondary-dark: #a4c3b2;
     --mint-green: #cce3de;
-    --azure-web: #eaf4f4;
-    --mint-cream: #f6fff8;
+    --primary-background: #ecfbe5;
+}*/
+
+:root {
+    --primary-dark: #556b2f ;
+    --secondary-dark: #a4c3b2;
+    --mint-green: #cce3de;
+    --primary-mid: #ceddb1;
+    --primary-background: #edf5f0;
 }
 
 * {
@@ -15,7 +22,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: var(--mint-cream);
+    background-color: var(--primary-background);
     color: #333;
 }
 

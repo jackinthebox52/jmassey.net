@@ -6,15 +6,15 @@
 
 .project-content h1 {
     font-size: 2.2rem;
-    color: var(--viridian);
+    color: var(--primary-dark);
     margin: 2.5rem 0 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--cambridge-blue);
+    border-bottom: 2px solid var(--secondary-dark);
 }
 
 .project-content h2 {
     font-size: 1.8rem;
-    color: var(--viridian);
+    color: var(--primary-dark);
     margin: 2rem 0 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--mint-green);
@@ -47,16 +47,16 @@
 }
 
 .project-content li::marker {
-    color: var(--viridian);
+    color: var(--primary-dark);
 }
 
 .project-content pre {
-    background-color: var(--azure-web);
+    background-color: var(--primary-background);
     padding: 1.5rem;
     border-radius: 8px;
     overflow-x: auto;
     margin: 1.5rem 0;
-    border-left: 4px solid var(--viridian);
+    border-left: 4px solid var(--primary-dark);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -67,32 +67,32 @@
 
 .project-content p code,
 .project-content li code {
-    background-color: var(--azure-web);
+    background-color: var(--primary-background);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-size: 0.9em;
-    color: var(--viridian);
+    color: var(--primary-dark);
 }
 
 .project-content blockquote {
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
-    border-left: 4px solid var(--cambridge-blue);
-    background-color: var(--mint-cream);
+    border-left: 4px solid var(--secondary-dark);
+    background-color: var(--primary-background);
     border-radius: 0 8px 8px 0;
     font-style: italic;
     color: #34495e;
 }
 
 .project-content a {
-    color: var(--viridian);
+    color: var(--primary-dark);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s ease;
 }
 
 .project-content a:hover {
-    border-bottom-color: var(--viridian);
+    border-bottom-color: var(--primary-dark);
 }
 
 .project-content table {
@@ -108,8 +108,8 @@
 }
 
 .project-content th {
-    background-color: var(--azure-web);
-    color: var(--viridian);
+    background-color: var(--primary-background);
+    color: var(--primary-dark);
     font-weight: 600;
 }
 
@@ -124,5 +124,5 @@
     margin: 2rem 0;
     border: none;
     height: 2px;
-    background: linear-gradient(to right, var(--mint-green), var(--cambridge-blue), var(--mint-green));
+    background: linear-gradient(to right, var(--mint-green), var(--secondary-dark), var(--mint-green));
 }

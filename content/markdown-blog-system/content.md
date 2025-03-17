@@ -81,11 +81,11 @@ I maintained consistency across the site using CSS variables:
 
 ```css
 :root {
-    --viridian: #6b9080;
-    --cambridge-blue: #a4c3b2;
+    --primary-dark: #6b9080;
+    --secondary-dark: #a4c3b2;
     --mint-green: #cce3de;
-    --azure-web: #eaf4f4;
-    --mint-cream: #f6fff8;
+    --primary-background: #eaf4f4;
+    --primary-background: #f6fff8;
 }
 ```
 

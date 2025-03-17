@@ -1,6 +1,9 @@
 footer {
     text-align: center;
-    padding: 2rem;
-    color: var(--viridian);
+    color: var(--primary-dark);
     margin-top: 2rem;
+}
+
+footer p {
+    font-size: small;
 }
