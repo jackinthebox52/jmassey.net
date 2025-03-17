@@ -1,0 +1,25 @@
+{
+    "name": "jaedawilson-net",
+    "version": "1.0.0",
+    "description": "Static site version of jaedawilson.net",
+    "main": "src/build.js",
+    "scripts": {
+        "build": "node src/build.js",
+        "dev": "cd public && npx http-server",
+        "deploy": "npm run build && npx wrangler pages publish public"
+    },
+    "keywords": [
+        "blog",
+        "static-site",
+        "markdown"
+    ],
+    "author": "Jackson Massey",
+    "license": "ISC",
+    "dependencies": {
+        "marked": "^14.1.4"
+    },
+    "devDependencies": {
+        "http-server": "^14.1.1",
+        "wrangler": "^3.114.1"
+    }
+}

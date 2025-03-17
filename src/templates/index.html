@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - jaedawilson.net</title>
+  <!-- Load shared styles first -->
+  <link rel="stylesheet" href="/styles/shared.css">
+  <!-- Load header component styles -->
+  <link rel="stylesheet" href="/styles/components/header.css">
+  <!-- Load page-specific styles -->
+  <link rel="stylesheet" href="/styles/components/project-card.css">
+  <!-- Load responsive styles last -->
+  <link rel="stylesheet" href="/styles/responsive.css">
+  <!-- Simple JavaScript for show more button -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const showMoreBtn = document.getElementById('showMoreBtn');
+      if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', function() {
+          const hiddenCards = document.querySelectorAll('.project-card.hidden');
+          hiddenCards.forEach(card => card.classList.remove('hidden'));
+          showMoreBtn.style.display = 'none';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="header-content">
+      <a href="/" class="nav-brand">jaedawilson.net</a>
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <main>
+      <!--
+        <section class="hero-section">
+        <h1>Jaeda Wilson</h1>
+        <p>Paralegal, Law Student</p>
+      </section>
+    -->
+
+      <section class="section">
+        <h2 class="section-title">Book Reviews</h2>
+        <div class="projects-grid">
+          {{projectCards}}
+        </div>
+        {{showMoreBtn}}
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 | Iowa, USA</p>
+    </footer>
+  </div>
+</body>
+</html>

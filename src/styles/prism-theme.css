@@ -1,0 +1,178 @@
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #374151;
+    background: none;
+    font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.95em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.6;
+    tab-size: 4;
+    hyphens: none;
+}
+
+pre[class*="language-"] {
+    padding: 1.5em;
+    margin: 1.5em 0;
+    overflow: auto;
+    border-radius: 8px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid var(--viridian);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+:not(pre) > code[class*="language-"] {
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    background: rgba(107, 144, 128, 0.1);
+    color: var(--viridian);
+    font-size: 0.9em;
+}
+/* ... (keep the existing styles at the top) ... */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6B7280;
+    font-style: italic;
+}
+
+.token.punctuation {
+    color: #64748B;  /* Slightly darker gray */
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol {
+    color: #0E7490;  /* Teal */
+}
+
+.token.boolean,
+.token.number {
+    color: #7C3AED;  /* Violet */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+    color: #15803D;  /* Darker green */
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+    color: #0284C7;  /* Sky blue */
+    background: transparent;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+    color: #0D9488;  /* Teal green */
+}
+
+.token.keyword {
+    color: #0369A1;  /* Darker blue */
+    font-weight: 600;
+}
+
+.token.class-name {
+    color: #B45309;  /* Amber */
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #BE123C;  /* Rose */
+}
+
+/* ... (keep the existing styles for .important, .bold, .italic) ... */
+
+/* Language-specific styling */
+.language-javascript .token.keyword,
+.language-typescript .token.keyword {
+    color: #6D28D9;  /* Indigo */
+}
+
+.language-python .token.keyword {
+    color: #1D4ED8;  /* Royal blue */
+}
+
+.token.string {
+    color: #059669;  /* Emerald */
+}
+
+.token.function-name {
+    color: #0E7490;  /* Teal */
+    font-weight: 600;
+}
+
+.language-json .token.property {
+    color: #0F766E;  /* Dark teal */
+}
+
+.language-markdown .token.heading,
+.language-markdown .token.title {
+    color: #1E40AF;  /* Darker blue */
+    font-weight: bold;
+}
+
+/* ... (keep the rest of the styles as they are) ... */
+/* Add a subtle background to inline code */
+:not(pre) > code {
+    background: rgba(107, 144, 128, 0.1);
+    color: var(--viridian);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: 'Fira Code', Consolas, Monaco, monospace;
+    border: 1px solid rgba(107, 144, 128, 0.2);
+}
+
+/* Optional: Add a file type indicator */
+pre[class*="language-"]::before {
+    content: attr(class);
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    color: var(--viridian);
+    background: rgba(107, 144, 128, 0.1);
+    border-radius: 0 0 4px 4px;
+    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Line highlight */
+.line-highlight {
+    background: rgba(107, 144, 128, 0.1);
+    border-left: 3px solid var(--viridian);
+}
+
+/* Selection highlight */
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+    background: rgba(107, 144, 128, 0.2);
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+    background: rgba(107, 144, 128, 0.2);
+}

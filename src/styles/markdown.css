@@ -1,0 +1,128 @@
+.project-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.project-content h1 {
+    font-size: 2.2rem;
+    color: var(--viridian);
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--cambridge-blue);
+}
+
+.project-content h2 {
+    font-size: 1.8rem;
+    color: var(--viridian);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--mint-green);
+}
+
+.project-content h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin: 1.5rem 0 1rem;
+}
+
+.project-content h4 {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin: 1.5rem 0 1rem;
+}
+
+.project-content p {
+    margin: 1.2rem 0;
+}
+
+.project-content ul,
+.project-content ol {
+    margin: 1.2rem 0 1.2rem 2rem;
+    padding-left: 1rem;
+}
+
+.project-content li {
+    margin: 0.5rem 0;
+}
+
+.project-content li::marker {
+    color: var(--viridian);
+}
+
+.project-content pre {
+    background-color: var(--azure-web);
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--viridian);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-content code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+}
+
+.project-content p code,
+.project-content li code {
+    background-color: var(--azure-web);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--viridian);
+}
+
+.project-content blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--cambridge-blue);
+    background-color: var(--mint-cream);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #34495e;
+}
+
+.project-content a {
+    color: var(--viridian);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.project-content a:hover {
+    border-bottom-color: var(--viridian);
+}
+
+.project-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.project-content th,
+.project-content td {
+    padding: 0.75rem;
+    border: 1px solid var(--mint-green);
+}
+
+.project-content th {
+    background-color: var(--azure-web);
+    color: var(--viridian);
+    font-weight: 600;
+}
+
+.project-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-content hr {
+    margin: 2rem 0;
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, var(--mint-green), var(--cambridge-blue), var(--mint-green));
+}

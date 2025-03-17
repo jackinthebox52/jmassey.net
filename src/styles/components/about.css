@@ -1,0 +1,39 @@
+.profile-section {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: var(--azure-web);
+    margin: -2rem -2rem 2rem -2rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.bio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bio-card {
+    background-color: var(--azure-web);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--viridian);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.timeline {
+    margin: 2rem 0;
+}
+
+.timeline-item {
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    border-left: 2px solid var(--mint-green);
+    position: relative;
+}

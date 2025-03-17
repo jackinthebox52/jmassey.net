@@ -1,0 +1,20 @@
+.project-header {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: var(--azure-web);
+    margin: -2rem -2rem 2rem -2rem;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 3px solid var(--cambridge-blue);
+}
+
+.project-header h1 {
+    color: var(--viridian);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.project-meta {
+    color: #666;
+    margin-bottom: 2rem;
+}

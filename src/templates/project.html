@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} - jaedawilson.net</title>
+  <!-- Load shared styles first -->
+  <link rel="stylesheet" href="/styles/shared.css">
+  <!-- Load header component styles -->
+  <link rel="stylesheet" href="/styles/components/header.css">
+  <!-- Load page-specific styles -->
+  <link rel="stylesheet" href="/styles/components/project.css">
+  <link rel="stylesheet" href="/styles/markdown.css">
+  <!-- Load responsive styles last -->
+  <link rel="stylesheet" href="/styles/responsive.css">
+</head>
+<body>
+  <header>
+    <nav class="header-content">
+      <a href="/" class="nav-brand">jaedawilson.net</a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <main>
+      <section class="project-header">
+        <h1>{{title}}</h1>
+        <div class="project-meta">
+          <span>{{date}}</span> |
+          {{tags}}
+        </div>
+        <p>{{description}}</p>
+      </section>
+
+      <div class="project-content">
+        {{content}}
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 | Iowa, USA</p>
+    </footer>
+  </div>
+</body>
+</html>

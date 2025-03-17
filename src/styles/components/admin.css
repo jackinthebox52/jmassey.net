@@ -1,0 +1,307 @@
+/* Admin Login Page */
+.admin-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.login-box {
+    background: var(--mint-green);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h1 {
+    color: var(--viridian);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+    padding: 1rem;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--mint-green);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logout-form {
+    margin: 0;
+}
+
+.btn-login {
+    background: var(--viridian);
+    color: white;
+    padding: 0.5rem 5rem;
+    border-radius: 4px;
+    border-color: var(--viridian);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    
+}
+
+.btn-small {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.metrics-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.metrics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.metrics-table th,
+.metrics-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.metrics-table th {
+    background: var(--azure-web);
+    color: var(--viridian);
+    font-weight: 600;
+}
+
+.metrics-table tr:hover {
+    background: var(--mint-cream);
+}
+
+.admin-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+}
+
+.admin-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+.admin-nav li a:hover,
+.admin-nav li a.active {
+    background-color: #555;
+}
+
+/* Add these styles to your existing admin.css */
+.admin-posts {
+    padding: 2rem;
+}
+
+.post-form {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.metadata-section {
+    background: var(--azure-web);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--viridian);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--cambridge-blue);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.editor-section {
+    margin-bottom: 2rem;
+}
+
+.form-actions {
+    text-align: right;
+}
+
+.btn-primary {
+    background: var(--viridian);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    background: var(--cambridge-blue);
+}
+
+/* EasyMDE customization */
+.EasyMDEContainer {
+    border: 1px solid var(--cambridge-blue);
+    border-radius: 4px;
+}
+
+/* Add to your existing admin.css */
+
+/* Posts List Styles */
+.posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--azure-web);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--viridian);
+}
+
+.post-info {
+    flex: 1;
+}
+
+.post-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--viridian);
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.post-description {
+    margin-bottom: 0.5rem;
+}
+
+.status-draft {
+    color: #ffa500;
+}
+
+.status-published {
+    color: #2ecc71;
+}
+
+.post-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.post-actions {
+    margin-left: 1rem;
+}
+
+.btn-edit {
+    background: var(--cambridge-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-edit:hover {
+    background: var(--viridian);
+}
+
+/* Editor Header */
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.btn-secondary {
+    background: var(--cambridge-blue);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: var(--viridian);
+}
