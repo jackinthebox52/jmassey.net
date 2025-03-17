@@ -1,0 +1,81 @@
+/* Star Rating System with granularity */
+.star-rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.stars {
+    display: inline-flex;
+    position: relative;
+    font-family: Arial, sans-serif;
+    color: #ddd; /* Empty star color */
+}
+
+.stars::before {
+    content: "★★★★★"; /* Empty stars */
+}
+
+.stars::after {
+    content: "★★★★★"; /* Filled stars */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0; /* Will be set dynamically */
+    overflow: hidden;
+    color: #FFD700; /* Gold color for filled stars */
+}
+
+/* Support for 10-point scale (0-10) mapped to 5 stars */
+/* Each 0.1 on 10-scale = 2% of width */
+.stars.stars-0::after { width: 0%; }
+.stars.stars-1::after { width: 2%; }
+.stars.stars-2::after { width: 4%; }
+.stars.stars-3::after { width: 6%; }
+.stars.stars-4::after { width: 8%; }
+.stars.stars-5::after { width: 10%; }
+.stars.stars-6::after { width: 12%; }
+.stars.stars-7::after { width: 14%; }
+.stars.stars-8::after { width: 16%; }
+.stars.stars-9::after { width: 18%; }
+.stars.stars-10::after { width: 20%; } /* 1 star out of 5 (or 10 out of 10) */
+.stars.stars-11::after { width: 22%; }
+.stars.stars-12::after { width: 24%; }
+.stars.stars-13::after { width: 26%; }
+.stars.stars-14::after { width: 28%; }
+.stars.stars-15::after { width: 30%; }
+.stars.stars-16::after { width: 32%; }
+.stars.stars-17::after { width: 34%; }
+.stars.stars-18::after { width: 36%; }
+.stars.stars-19::after { width: 38%; }
+.stars.stars-20::after { width: 40%; } /* 2 stars out of 5 */
+.stars.stars-21::after { width: 42%; }
+.stars.stars-22::after { width: 44%; }
+.stars.stars-23::after { width: 46%; }
+.stars.stars-24::after { width: 48%; }
+.stars.stars-25::after { width: 50%; }
+.stars.stars-26::after { width: 52%; }
+.stars.stars-27::after { width: 54%; }
+.stars.stars-28::after { width: 56%; }
+.stars.stars-29::after { width: 58%; }
+.stars.stars-30::after { width: 60%; } /* 3 stars out of 5 */
+.stars.stars-31::after { width: 62%; }
+.stars.stars-32::after { width: 64%; }
+.stars.stars-33::after { width: 66%; }
+.stars.stars-34::after { width: 68%; }
+.stars.stars-35::after { width: 70%; }
+.stars.stars-36::after { width: 72%; }
+.stars.stars-37::after { width: 74%; }
+.stars.stars-38::after { width: 76%; }
+.stars.stars-39::after { width: 78%; }
+.stars.stars-40::after { width: 80%; } /* 4 stars out of 5 */
+.stars.stars-41::after { width: 82%; }
+.stars.stars-42::after { width: 84%; }
+.stars.stars-43::after { width: 86%; }
+.stars.stars-44::after { width: 88%; }
+.stars.stars-45::after { width: 90%; }
+.stars.stars-46::after { width: 92%; }
+.stars.stars-47::after { width: 94%; }
+.stars.stars-48::after { width: 96%; }
+.stars.stars-49::after { width: 98%; }
+.stars.stars-50::after { width: 100%; } /* 5 stars out of 5 (or 10 out of 10) */

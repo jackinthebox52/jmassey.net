@@ -21,6 +21,28 @@ async function ensureDir(dirPath) {
     }
 }
 
+// Function to convert 10-scale rating to CSS class
+function getRatingClass(rating) {
+    // Default to 0 if rating is undefined or invalid
+    if (rating === undefined || rating === null || isNaN(rating)) {
+      return 'stars-0';
+    }
+    
+    // Ensure we have a number
+    const numRating = parseFloat(rating);
+    
+    // Validate the range (1-10 scale)
+    if (numRating < 0) return 'stars-0';
+    if (numRating > 10) return 'stars-50';
+    
+    // Convert 10-scale to 50-scale for CSS classes
+    // Formula: (rating / 10) * 50 = rating * 5
+    const scaledRating = Math.round(numRating * 5);
+    
+    // Return the class name
+    return `stars-${scaledRating}`;
+  }
+
 // Read a template file
 async function readTemplate(name) {
     return await fs.readFile(path.join(templatesDir, `${name}.html`), 'utf-8');
@@ -125,76 +147,86 @@ async function generateProjectPages() {
 }
 
 // Generate the home page
+// Generate the home page
 async function generateHomePage(projects) {
     // Sort projects by date (newest first)
     projects.sort((a, b) => new Date(b.date) - new Date(a.date));
-    
+
     // Read index template
     const indexTemplate = await readTemplate('index');
-    
+
     // Generate project cards HTML
     let projectCardsHtml = '';
     let showMoreBtn = '';
-    
+
     // If there are no projects, show an empty state card
     if (projects.length === 0) {
-      projectCardsHtml = `
+        projectCardsHtml = `
         <div class="project-card">
           <h3>Empty</h3>
           <p>I have not yet posted any book reviews. Check back soon!</p>
         </div>
       `;
     } else {
-      // Generate cards for existing projects
-      projectCardsHtml = projects.map((project, index) => {
-        const isHidden = index >= 6 ? ' hidden' : '';
-        
-        const tagsHtml = project.tags
-          .map(tag => `<span class="tag">${tag}</span>`)
-          .join('');
-        
-        const formattedDate = new Date(project.date).toLocaleDateString();
-        
-        return `
-          <div class="project-card${isHidden}" data-index="${index}">
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                ${tagsHtml}
+        // Generate cards for existing projects
+        projectCardsHtml = projects.map((project, index) => {
+            const isHidden = index >= 6 ? ' hidden' : '';
+            
+            const tagsHtml = project.tags
+              .map(tag => `<span class="tag">${tag}</span>`)
+              .join('');
+            
+            const formattedDate = new Date(project.date).toLocaleDateString();
+            
+            // Get star rating class from our helper function
+            const starRatingClass = getRatingClass(project.rating);
+            
+            // Convert rating to 5-scale for display
+            const displayRating = project.rating ? (project.rating / 2).toFixed(1) : '0.0';
+            
+            return `
+              <div class="project-card${isHidden}" data-index="${index}">
+                <a href="${project.url}" class="project-card-link" aria-label="View ${project.title}"></a>
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    ${tagsHtml}
+                  </div>
+                  <div class="project-meta">
+                    <span>${formattedDate}</span>
+                    <div class="star-rating" aria-label="Rating: ${displayRating} out of 5 stars">
+                      <span class="stars ${starRatingClass}"></span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="project-meta">
-                <span>${formattedDate}</span>
-                <a href="${project.url}" class="btn">Read</a>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
-      
-      
-      if (projects.length > 6) {
-        showMoreBtn = `
+            `;
+          }).join('');
+
+        if (projects.length > 6) {
+            showMoreBtn = `
           <div class="show-more-container">
             <a id="showMoreBtn" class="btn">Show More Reviews</a>
           </div>
         `;
-      }
+        }
     }
-    
+
     // Apply template
     const html = applyTemplate(indexTemplate, {
-      projectCards: projectCardsHtml,
-      showMoreBtn: showMoreBtn,
-      currentYear: new Date().getFullYear()
+        projectCards: projectCardsHtml,
+        showMoreBtn: showMoreBtn,
+        currentYear: new Date().getFullYear()
     });
-    
+
     // Write output file
     const outputPath = path.join(publicDir, 'index.html');
     await fs.writeFile(outputPath, html);
-    
+
     console.log(`Generated: ${outputPath}`);
-  }
+}
+
 
 // Copy static assets
 async function copyStaticAssets() {

@@ -5,8 +5,6 @@
     margin-top: 2rem;
 }
 
-/* Add this to your project-card.css file */
-
 .project-card {
     background-color: var(--azure-web);
     padding: 1.5rem;
@@ -16,13 +14,57 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    min-height: 250px; /* Set a minimum height for all cards */
-    cursor: pointer; /* Add pointer cursor to the entire card */
+    min-height: 250px;
+    cursor: pointer;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Add shadow on hover for better feedback */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+    color: var(--viridian);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.project-card p {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.project-footer {
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: var(--mint-green);
+    color: var(--viridian);
+    padding: 0.2rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
 }
 
 /* Make the entire card clickable by adding a pseudo-element over it */
@@ -35,30 +77,6 @@
     z-index: 1;
 }
 
-/* Ensure the "Learn More" button is still usable by placing it above the overlay */
-.project-meta .btn {
-    position: relative;
-    z-index: 2; /* Higher than the card-link overlay */
-}
-
-/* Make sure text remains selectable */
-.project-card h3, 
-.project-card p,
-.project-card .project-tags,
-.project-card .project-meta span {
-    position: relative;
-    z-index: 2;
-}
-
-.tag {
-    background-color: var(--mint-green);
-    color: var(--viridian);
-    padding: 0.2rem 0.8rem;
-    border-radius: 1rem;
-    font-size: 0.9rem;
-    transition: background-color 0.2s ease;
-}
-
 .btn {
     display: inline-block;
     padding: 0.5rem 1.5rem;
@@ -67,13 +85,14 @@
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s;
-    cursor: pointer
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
 }
 
 .btn:hover {
     background-color: var(--cambridge-blue);
 }
-
 
 .hidden {
     display: none;
@@ -82,4 +101,66 @@
 .show-more-container {
     margin-top: 2rem;
     text-align: center;
+}
+
+.project-meta .btn {
+    position: relative;
+    z-index: 3;
+}
+
+.project-card .project-meta span {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Star Rating System */
+.star-rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.stars {
+    display: inline-flex;
+    position: relative;
+    font-family: Arial, sans-serif;
+    color: #ddd; /* Empty star color */
+}
+
+.stars::before {
+    content: "★★★★★"; /* Empty stars */
+}
+
+.stars::after {
+    content: "★★★★★"; /* Filled stars */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0; /* Will be set dynamically */
+    overflow: hidden;
+    color: #FFD700; /* Gold color for filled stars */
+}
+
+/* Different star-fill classes for various ratings */
+.stars.stars-0::after { width: 0%; }
+.stars.stars-0-5::after { width: 10%; }
+.stars.stars-1::after { width: 20%; }
+.stars.stars-1-5::after { width: 30%; }
+.stars.stars-2::after { width: 40%; }
+.stars.stars-2-5::after { width: 50%; }
+.stars.stars-3::after { width: 60%; }
+.stars.stars-3-5::after { width: 70%; }
+.stars.stars-4::after { width: 80%; }
+.stars.stars-4-5::after { width: 90%; }
+.stars.stars-5::after { width: 100%; }
+
+/* Update the project card footer for the new layout */
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
 }
