@@ -36,7 +36,7 @@ In the large text area, add the book review's metadata in JSON format. Ensure th
         "American Literature"
     ],
     "author": "F. Scott Fitzgerald",
-    "rating": 4.5,
+    "rating": 9,
     "status": "Published"
 }
 ```
@@ -47,7 +47,7 @@ Customize the information for your book:
 - `date`: Today's date in YYYY-MM-DD format
 - `tags`: Categories for the book (Fiction, Non-fiction, Mystery, etc.)
 - `author`: The book's author
-- `rating`: Your rating out of 5
+- `rating`: Your rating out of 10 (Will be displayed as stars out of 5)
 - `status`: Keep this as "Published"
 
 ## Step 4: Commit the Metadata File
@@ -67,14 +67,6 @@ Customize the information for your book:
 Here's a template to get you started:
 
 ```markdown
-# The Great Gatsby
-
-## Book Information
-* **Author:** F. Scott Fitzgerald
-* **Published:** 1925
-* **Genre:** Fiction, Classic
-* **Pages:** 180
-
 ## Summary
 The Great Gatsby tells the story of eccentric millionaire Jay Gatsby and his obsession with the beautiful Daisy Buchanan. Set in the Roaring Twenties, the novel explores themes of wealth, class, love, and the American Dream.
 
