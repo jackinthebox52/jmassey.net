@@ -3,6 +3,8 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-card {
@@ -16,6 +18,12 @@
     position: relative;
     min-height: 250px;
     cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
 }
 
 .project-card:hover {
@@ -38,12 +46,22 @@
 .project-card h3 {
     color: var(--primary-dark);
     margin-bottom: 1rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
 }
 
 
 .project-card p {
     margin-bottom: 1.5rem;
     flex-grow: 1;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
 }
 
 
@@ -68,12 +86,15 @@
     font-size: 0.9rem;
     color: #666;
     margin-top: 10px;
+    width: 100%; /* Ensure full width */
 }
+
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    max-width: 100%;
 }
 
 .tag {

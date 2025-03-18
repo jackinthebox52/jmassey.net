@@ -1,9 +1,8 @@
-/* Star Rating System with granularity */
 .star-rating {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    pointer-events: none; /* Prevent star rating from capturing clicks */
+    pointer-events: none; /* Allow clicks to pass through */
 }
 
 .stars {
@@ -11,10 +10,15 @@
     position: relative;
     font-family: Arial, sans-serif;
     color: #ddd; /* Empty star color */
+    width: auto; /* Let content determine width */
+    overflow: visible; /* Don't clip content */
+    line-height: 1; /* Prevent line height issues */
+    white-space: nowrap; /* Keep stars on one line */
 }
 
 .stars::before {
     content: "★★★★★"; /* Empty stars */
+    white-space: nowrap; /* Ensure this stays on one line */
 }
 
 .stars::after {
@@ -22,9 +26,9 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 0; /* Will be set dynamically */
     overflow: hidden;
     color: #FFD700; /* Gold color for filled stars */
+    white-space: nowrap; /* Ensure this stays on one line */
 }
 
 /* Support for 10-point scale (0-10) mapped to 5 stars */
