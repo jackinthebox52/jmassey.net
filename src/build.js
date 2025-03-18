@@ -130,7 +130,8 @@ async function generateProjectPages() {
                 description: metadata.description,
                 date: formattedDate,
                 tags: tagsHtml,
-                content: htmlContent
+                content: htmlContent,
+                author: metadata.author || 'Unknown Author'
             });
 
             // Write output file
