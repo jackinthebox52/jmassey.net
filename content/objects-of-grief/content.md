@@ -1,4 +1,5 @@
-An Intimate Portrait of Friendship
+## An Intimate Portrait of Friendship
+
 This novel begins quietly but builds to an emotional crescendo that left me thinking about it for weeks afterward. Following four friends from their college days through middle age, it explores how relationships evolve, fracture, and sometimes heal in unexpected ways over decades.
 What impressed me most was the author's remarkable empathy for all four main characters. Even when they make terrible decisions or hurt one another, the narrative never judges them harshly but instead reveals the complex mixture of love, jealousy, loyalty, and resentment that characterizes long-term friendships.
 The structure - alternating between different time periods rather than proceeding chronologically - works brilliantly. Each chapter reveals new information that recontextualizes earlier scenes, creating a rich tapestry of cause and effect that spans twenty-five years. The technique could have been confusing, but the distinctive voices of each character provide clear orientation.

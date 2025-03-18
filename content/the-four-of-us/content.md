@@ -1,4 +1,5 @@
-Style Over Substance
+## Style Over Substance
+
 I wanted to love this book. The premise - a surreal exploration of grief through magical realism - seemed perfectly tailored to my tastes. And indeed, there are moments of genuine brilliance scattered throughout. The scene where the protagonist encounters her deceased mother in the form of various household objects is both heartbreaking and strangely beautiful.
 However, the author's insistence on experimental prose often obscures rather than enhances the emotional core of the story. Entire chapters unfold in stream-of-consciousness fragments that, while technically impressive, keep the reader at arm's length from the characters' experiences. The constant shifts between first, second, and third person perspective feel more like literary showing-off than meaningful narrative choices.
 The middle section, where the protagonist retreats to an isolated cabin in the woods, drags considerably. Pages upon pages are devoted to minutely detailed descriptions of her daily routines, which I suppose is meant to reflect the monotony of grief but ultimately tests the reader's patience.

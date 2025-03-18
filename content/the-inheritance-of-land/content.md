@@ -1,4 +1,5 @@
-A Sprawling Epic That Falls Short
+## A Sprawling Epic That Falls Short
+
 I had high expectations after all the awards and critical acclaim, but this novel left me feeling somewhat empty. While the prose is undeniably beautiful - almost poetic at times with its vivid descriptions of the harsh landscape and changing seasons - the story itself meanders too much.
 The multi-generational saga spans over 70 years, which is ambitious, but it results in characters that never feel fully developed. Just as I began to connect with one character's journey, the narrative would shift to another timeline or perspective. The author clearly has technical skill, but the emotional resonance I was hoping for never materialized.
 One strength is the historical research, which feels meticulously accurate. The portrayal of frontier life and its hardships is unflinching and raw. However, many of the characters' motivations remain opaque, particularly in the third section where the protagonist makes a series of increasingly puzzling decisions that seem to contradict their earlier characterization.

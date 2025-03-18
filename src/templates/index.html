@@ -13,18 +13,7 @@
   <link rel="stylesheet" href="/styles/components/ratings.css"> <!-- Load ratings styles for stars -->
   <link rel="stylesheet" href="/styles/components/footer.css"> <!-- Load footer styles -->
   <link rel="stylesheet" href="/styles/components/project.css"> <!-- Load project styles -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const showMoreBtn = document.getElementById('showMoreBtn');
-      if (showMoreBtn) {
-        showMoreBtn.addEventListener('click', function() {
-          const hiddenCards = document.querySelectorAll('.project-card.hidden');
-          hiddenCards.forEach(card => card.classList.remove('hidden'));
-          showMoreBtn.style.display = 'none';
-        });
-      }
-    });
-  </script>
+  <link rel="stylesheet" href="/styles/components/sorting.css"> <!-- Load sorting styles -->
 </head>
 <body>
   <header>

@@ -1,4 +1,5 @@
-Ambitious But Uneven Dystopia
+# Ambitious But Uneven Dystopia
+
 This novel has all the ingredients of a compelling dystopian narrative - an intriguing premise, high stakes, and a vivid setting. The concept of a society where memories become currency is fascinating, and the worldbuilding in the first third of the book is excellent. I was particularly struck by the "memory markets" where people trade significant experiences, creating a disturbing economy of personal history.
 Unfortunately, the promising foundation isn't fully capitalized on. The protagonist, initially presented as morally ambiguous, undergoes a transformation into a more conventional hero that feels rushed and unconvincing. Their rebellion against the system lacks the psychological complexity that the premise deserves.
 The middle section of the book gets bogged down in a romantic subplot that distracts from the more interesting societal questions. Several intriguing secondary characters - especially the memory broker with a secret agenda - are introduced but then underutilized as the narrative narrowly focuses on the protagonist's journey.

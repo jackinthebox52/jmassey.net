@@ -1,4 +1,4 @@
-# A Missed Opportunity
+## A Missed Opportunity
 
 After reading Normal People and being mildly disappointed, I was hoping this book would redeem Rooney's storytelling for me, but I think that it was much worse than NP (maybe an unpopular opinion).
 

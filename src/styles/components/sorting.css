@@ -1,0 +1,77 @@
+/* Styles for the sorting controls */
+
+.sorting-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sort-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-right: 0.75rem;
+}
+
+.sort-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.sort-btn {
+    background-color: var(--primary-background);
+    border: 1px solid var(--primary-dark);
+    color: var(--primary-dark);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-btn:hover {
+    background-color: var(--mint-green);
+}
+
+.sort-btn.active {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 480px) {
+    .sorting-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .sort-options {
+        width: 100%;
+    }
+
+    .sort-btn {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sorting-controls {
+    margin: 0;
+}
+
+/* For responsive layout */
+@media screen and (max-width: 450px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}

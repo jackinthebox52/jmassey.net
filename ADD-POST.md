@@ -88,7 +88,6 @@ I found Fitzgerald's writing to be elegant and evocative, perfectly capturing th
 
 > "I hope she'll be a fool -- that's the best thing a girl can be in this world, a beautiful little fool."
 
-## Rating: 4.5/5 Stars
 ```
 
 Customize this template with your own review! You can learn more about Markdown formatting at [Markdown Guide](https://www.markdownguide.org/basic-syntax/). There are many cool features of markdown that will make your reviews look beautiful like yourself.
