@@ -90,6 +90,7 @@
 }
 
 
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -122,6 +123,14 @@
 
 .btn:hover {
     background-color: var(--secondary-dark);
+}
+
+
+.date-display {
+    display: inline-block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
 }
 
 .hidden {
@@ -185,12 +194,3 @@
 .stars.stars-4-5::after { width: 90%; }
 .stars.stars-5::after { width: 100%; }
 
-/* Update the project card footer for the new layout */
-.project-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 10px;
-}

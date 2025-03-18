@@ -147,7 +147,6 @@ async function generateProjectPages() {
 }
 
 // Generate the home page
-// Generate the home page
 async function generateHomePage(projects) {
     // Sort projects by date (newest first)
     projects.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -194,7 +193,7 @@ async function generateHomePage(projects) {
                     ${tagsHtml}
                   </div>
                   <div class="project-meta">
-                    <span>${formattedDate}</span>
+                    <div class="date-display">${formattedDate}</div>
                     <div class="star-rating" aria-label="Rating: ${displayRating} out of 5 stars">
                       <span class="stars ${starRatingClass}"></span>
                     </div>

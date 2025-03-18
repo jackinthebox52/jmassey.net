@@ -1,18 +1,19 @@
 /* General responsive adjustments */
 @media screen and (max-width: 768px) {
+
     /* Container adjustments */
     .container {
         padding: 10px;
         width: 100%;
         box-sizing: border-box;
     }
-    
+
     main {
         padding: 1.25rem;
         width: 100%;
         box-sizing: border-box;
     }
-    
+
     /* Project grid - force single column on small screens */
     .projects-grid {
         grid-template-columns: 1fr;
@@ -20,37 +21,39 @@
         padding: 0;
         margin-top: 1.5rem;
     }
-    
+
     /* Card adjustments for smaller screens */
     .project-card {
         width: 100%;
         box-sizing: border-box;
         margin-left: 0;
         margin-right: 0;
-        min-height: auto; /* Allow height to be determined by content */
+        min-height: auto;
+        /* Allow height to be determined by content */
         padding: 1.25rem;
     }
-    
+
     /* Text size adjustments */
     .project-card h3 {
         font-size: 1.3rem;
         margin-bottom: 0.75rem;
     }
-    
+
     /* Ensure tags wrap properly */
     .project-tags {
         flex-wrap: wrap;
         max-width: 100%;
     }
-    
+
     .tag {
         margin-bottom: 0.25rem;
         padding: 0.2rem 0.6rem;
         font-size: 0.85rem;
     }
-    
+
     /* Handle long text */
-    .project-card p, .project-card h3 {
+    .project-card p,
+    .project-card h3 {
         overflow-wrap: break-word;
         word-wrap: break-word;
         word-break: break-word;
@@ -64,34 +67,39 @@
     main {
         padding: 1rem;
     }
-    
+
     .project-card {
         padding: 1rem;
     }
-    
+
     /* Adjust meta info layout on very small screens */
     .project-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
-    
+
+    .date-display {
+        margin-right: 0;
+    }
+
     .star-rating {
         align-self: flex-end;
         margin-top: 0.5rem;
     }
-    
+
     /* Further reduce padding */
     .project-card {
         padding: 0.875rem;
     }
-    
+
     /* Make sure show more button fits */
     .show-more-container {
         width: 100%;
         margin-top: 1.5rem;
     }
-    
+
     #showMoreBtn {
         width: 100%;
         box-sizing: border-box;
@@ -100,7 +108,10 @@
 }
 
 /* Ensure images and other media are responsive */
-img, pre, code, table {
+img,
+pre,
+code,
+table {
     max-width: 100%;
     height: auto;
 }
