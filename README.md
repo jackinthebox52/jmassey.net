@@ -50,7 +50,7 @@ Customize the information for your book:
 - `tags`: Categories for the book (Fiction, Non-fiction, Mystery, etc.)
 - `author`: The book's author
 - `rating`: Your rating out of 10 with a granularity of 0.1 (Will be displayed as stars out of 5)
-- `status`: Keep this as "Published" 
+- `status`: Keep this as "Published". If you want to do drafts before publishing, then set to "Hidden" and change the status to "Published" once you're ready.
 
 ## Step 4: Commit the Metadata File
 
@@ -65,6 +65,10 @@ Customize the information for your book:
 2. Click the "Add file" button again and select "Create new file"
 3. Name this file `content.md`
 4. In the text area, add your review in Markdown format
+
+This is markdown. Markdown has serveral formatting options, two of which are used in the below template (Ignore the quotes):
+"# TEXT HERE" or "## TEXT HERE" will create different sized headings, which are larger pieces of text for things like titles.
+"> TEXT HERE" Italicizes the text and shows the carat symbol, which is useful for things like character quotes. See the [markdown guide](https://www.markdownguide.org/basic-syntax/) for more.
 
 Here's a template to get you started:
 
