@@ -7,11 +7,11 @@
     border-bottom: 3px solid var(--secondary-dark);
 }
 
-.project-meta {
+/* Create a specific class for the project page meta info */
+.project-header-meta {
     color: whitesmoke;
     margin: 0 2rem 1em;
 }
-
 
 /* Project header description */
 .project-header p {
@@ -33,5 +33,4 @@
     color: whitesmoke;
     margin-bottom: 1rem;
     font-style: italic;
-  }
-  
+}

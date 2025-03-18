@@ -193,7 +193,7 @@ async function generateHomePage(projects) {
                   <div class="project-tags">
                     ${tagsHtml}
                   </div>
-                  <div class="project-meta">
+                  <div class="card-meta">
                     <div class="date-display">${formattedDate}</div>
                     <div class="star-rating" aria-label="Rating: ${displayRating} out of 5 stars">
                       <span class="stars ${starRatingClass}"></span>

@@ -35,7 +35,7 @@
 .project-card p,
 .project-card .project-footer,
 .project-card .project-tags,
-.project-card .project-meta,
+.project-card .card-meta,
 .project-card .tag {
     pointer-events: none;
     position: relative;
@@ -79,7 +79,8 @@
 }
 
 
-.project-meta {
+/* Renamed from project-meta to card-meta */
+.card-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,7 +89,6 @@
     margin-top: 10px;
     width: 100%; /* Ensure full width */
 }
-
 
 
 .project-tags {
@@ -142,18 +142,18 @@
     text-align: center;
 }
 
-.project-meta .btn {
+.card-meta .btn {
     position: relative;
     z-index: 3;
 }
 
-.project-card .project-meta span {
+.project-card .card-meta span {
     position: relative;
     z-index: 2;
 }
 
 
-/* Star Rating System */
+/* Star Rating System 
 .star-rating {
     display: flex;
     align-items: center;
@@ -164,24 +164,24 @@
     display: inline-flex;
     position: relative;
     font-family: Arial, sans-serif;
-    color: #ddd; /* Empty star color */
+    color: #ddd;
 }
 
 .stars::before {
-    content: "★★★★★"; /* Empty stars */
+    content: "★★★★★"; 
 }
 
 .stars::after {
-    content: "★★★★★"; /* Filled stars */
+    content: "★★★★★"; 
     position: absolute;
     left: 0;
     top: 0;
-    width: 0; /* Will be set dynamically */
+    width: 0;
     overflow: hidden;
-    color: #FFD700; /* Gold color for filled stars */
+    color: #FFD700;
 }
 
-/* Different star-fill classes for various ratings */
+
 .stars.stars-0::after { width: 0%; }
 .stars.stars-0-5::after { width: 10%; }
 .stars.stars-1::after { width: 20%; }
@@ -193,4 +193,4 @@
 .stars.stars-4::after { width: 80%; }
 .stars.stars-4-5::after { width: 90%; }
 .stars.stars-5::after { width: 100%; }
-
+*/

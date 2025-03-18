@@ -60,6 +60,11 @@
         hyphens: auto;
         max-width: 100%;
     }
+    
+    /* Project page specific adjustments */
+    .project-header-meta {
+        margin: 0 1rem 1em;
+    }
 }
 
 /* For very small screens */
@@ -73,11 +78,15 @@
     }
 
     /* Adjust meta info layout on very small screens */
-    .project-meta {
+    .card-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+    }
+
+    .project-header-meta {
+        margin: 0 0.5rem 0.75em;
     }
 
     .date-display {
