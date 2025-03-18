@@ -23,25 +23,43 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.project-card h3 {
-    color: var(--primary-dark);
-    margin-bottom: 1rem;
+.project-card h3,
+.project-card p,
+.project-card .project-footer,
+.project-card .project-tags,
+.project-card .project-meta,
+.project-card .tag {
+    pointer-events: none;
     position: relative;
     z-index: 2;
 }
+
+
+.project-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
 
 .project-card p {
     margin-bottom: 1.5rem;
     flex-grow: 1;
-    position: relative;
-    z-index: 2;
+}
+
+
+.project-card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
 }
 
 .project-footer {
     margin-top: auto;
-    position: relative;
-    z-index: 2;
 }
+
 
 .project-meta {
     display: flex;
@@ -67,16 +85,6 @@
     transition: background-color 0.2s ease;
 }
 
-/* Make the entire card clickable by adding a pseudo-element over it */
-.project-card-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
 .btn {
     display: inline-block;
     padding: 0.5rem 1.5rem;
@@ -88,6 +96,7 @@
     cursor: pointer;
     position: relative;
     z-index: 2;
+    pointer-events: auto; /* Allow clicking on buttons */
 }
 
 .btn:hover {
