@@ -39,6 +39,27 @@ async function removeFile(filePath) {
     }
 }
 
+// Function to get header HTML with active page highlighting
+async function getHeaderHTML(activePage) {
+    const headerTemplate = await readTemplate('header');
+    
+    let homeActive = '';
+    let aboutActive = '';
+    
+    // Set active class based on the current page
+    if (activePage === 'home') {
+        homeActive = 'class="active"';
+    } else if (activePage === 'about') {
+        aboutActive = 'class="active"';
+    } else if (activePage === 'project') {
+        // Projects don't have active nav, but you could add a Projects nav item if desired
+    }
+    
+    return headerTemplate
+        .replace('{{homeActive}}', homeActive)
+        .replace('{{aboutActive}}', aboutActive);
+}
+
 // Function to check if a Project should be published
 function isPublished(metadata) {
     // Check if the status field exists and is set to "published" (case insensitive)
@@ -67,17 +88,19 @@ async function generateAboutPage() {
     try {
         // Read about template
         const aboutTemplate = await readTemplate('about');
-
-        // Apply template with current year
-        const html = aboutTemplate.replace(
-            /© 2025/g,
-            `© ${new Date().getFullYear()}`
-        );
-
+        
+        // Get header with about page active
+        const headerHTML = await getHeaderHTML('about');
+        
+        // Apply template with current year and header
+        const html = aboutTemplate
+            .replace(/© 2025/g, `© ${new Date().getFullYear()}`)
+            .replace('{{header}}', headerHTML);
+        
         // Write output file
         const outputPath = path.join(publicDir, 'about.html');
         await fs.writeFile(outputPath, html);
-
+        
         console.log(`Generated: ${outputPath}`);
     } catch (err) {
         console.error('Error generating about page:', err);
@@ -115,6 +138,8 @@ async function generateProjectPages() {
     // Read project template
     const ProjectTemplate = await readTemplate('project'); // Still using project.html template
 
+    const headerHTML = await getHeaderHTML('project');
+    
     // Ensure Project directory exists
     await ensureDir(ProjectsOutputDir);
 
@@ -174,6 +199,7 @@ async function generateProjectPages() {
                 date: formattedDate,
                 tags: tagsHtml,
                 content: htmlContent,
+                header: headerHTML
             });
 
             // Write output file
@@ -199,8 +225,9 @@ async function generateHomePage(Projects) {
     // Sort Projects by date (newest first)
     Projects.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    // Read index template
     const indexTemplate = await readTemplate('index');
+
+    const headerHTML = await getHeaderHTML('home');
 
     // Generate Project cards HTML
     let ProjectCardsHtml = '';
@@ -338,11 +365,12 @@ async function generateHomePage(Projects) {
     </script>
     `;
 
-    // Apply template
+    // Further down in the function, add this to your template application:
     let html = applyTemplate(indexTemplate, {
         projectCards: ProjectCardsHtml,
         showMoreBtn: showMoreBtn,
-        currentYear: new Date().getFullYear()
+        currentYear: new Date().getFullYear(),
+        header: headerHTML
     });
     
     // Insert sorting controls before the projects-grid div

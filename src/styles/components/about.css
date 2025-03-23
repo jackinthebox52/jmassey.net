@@ -38,3 +38,32 @@
     border-left: 2px solid var(--mint-green);
     position: relative;
 }
+
+.bio-card ul {
+    margin-left: 1rem;
+}
+
+.connect-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.connect-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-dark);
+    color: whitesmoke;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.connect-btn:hover {
+    background-color: var(--secondary-dark);
+    transform: translateY(-2px);
+}

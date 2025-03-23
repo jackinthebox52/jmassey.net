@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
   <META HTTP-EQUIV="refresh" CONTENT="900">
-  <title>jmassey.net</title>
+  <title>jmassey.net - Posts</title>
   <link rel="stylesheet" href="/styles/shared.css"> <!-- Load shared styles first -->
   <link rel="stylesheet" href="/styles/components/header.css">  <!-- Load header component styles -->
   <link rel="stylesheet" href="/styles/components/project-card.css"> <!-- Load page-specific styles -->
@@ -15,19 +15,12 @@
   <link rel="stylesheet" href="/styles/components/sorting.css"> <!-- Load sorting styles -->
 </head>
 <body>
-  <header>
-    <nav class="header-content">
-      <a href="/" class="nav-brand">jmassey.net</a>
-      <ul>
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
+  {{header}}
   
   <div class="container">
     <main>
       <section class="section">
+        
         <div class="projects-grid">
           {{projectCards}}
         </div>
