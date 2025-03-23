@@ -1,26 +1,27 @@
 {
-    "name": "jaedawilson-net",
+    "name": "jmassey.net",
     "version": "1.0.0",
-    "description": "Static CF pages version of jaedawilson.net",
+    "description": "Static CF pages version of jmassey.net",
     "main": "src/build.js",
     "scripts": {
-      "build": "node src/build.js",
-      "dev": "cd public && npx http-server",
-      "buildrun": "npm run build && npm run dev",
-      "deploy": "npm run build && npx wrangler pages publish public"
+        "build": "node src/build.js",
+        "dev": "cd public && npx http-server",
+        "buildrun": "npm run build && npm run dev",
+        "deploy": "npm run build && npx wrangler pages publish public"
     },
     "keywords": [
-      "blog",
-      "static-site",
-      "markdown"
+        "blog",
+        "static-site",
+        "markdown",
+        "git"
     ],
     "author": "Jackson Massey",
     "license": "ISC",
     "dependencies": {
-      "marked": "^14.1.4"
+        "marked": "^14.1.4"
     },
     "devDependencies": {
-      "http-server": "^14.1.1",
-      "wrangler": "^3.114.1"
+        "http-server": "^14.1.1",
+        "wrangler": "^3.114.1"
     }
-  }
+}

@@ -1,0 +1,7 @@
+{
+    "title": "Markdown CMS",
+    "description": "Wordpress is bloat. Create your own simple content management system powered by node and markedjs. jmassey.net was built using this method.",
+    "date": "2022-02-11",
+    "tags": ["JavaScript", "CMS", "Markdown", "jmassey.net"],
+    "status": "published"
+}

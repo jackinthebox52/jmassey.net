@@ -11,7 +11,7 @@ marked.setOptions({
 const contentDir = path.join(__dirname, '..', 'content');
 const publicDir = path.join(__dirname, '..', 'public');
 const templatesDir = path.join(__dirname, 'templates');
-const reviewsOutputDir = path.join(publicDir, 'review'); // Changed from 'project' to 'review'
+const ProjectsOutputDir = path.join(publicDir, 'Project');
 
 // Utility to ensure directory exists
 async function ensureDir(dirPath) {
@@ -34,7 +34,7 @@ async function removeFile(filePath) {
     }
 }
 
-// Function to check if a review should be published
+// Function to check if a Project should be published
 function isPublished(metadata) {
     // Check if the status field exists and is set to "published" (case insensitive)
     if (!metadata.status) {
@@ -45,28 +45,6 @@ function isPublished(metadata) {
     // Normalize the status and check if it equals "published"
     return metadata.status.toLowerCase() === 'published';
 }
-
-// Function to convert 10-scale rating to CSS class
-function getRatingClass(rating) {
-    // Default to 0 if rating is undefined or invalid
-    if (rating === undefined || rating === null || isNaN(rating)) {
-      return 'stars-0';
-    }
-    
-    // Ensure we have a number
-    const numRating = parseFloat(rating);
-    
-    // Validate the range (1-10 scale)
-    if (numRating < 0) return 'stars-0';
-    if (numRating > 10) return 'stars-50';
-    
-    // Convert 10-scale to 50-scale for CSS classes
-    // Formula: (rating / 10) * 50 = rating * 5
-    const scaledRating = Math.round(numRating * 5);
-    
-    // Return the class name
-    return `stars-${scaledRating}`;
-  }
 
 // Read a template file
 async function readTemplate(name) {
@@ -101,57 +79,57 @@ async function generateAboutPage() {
     }
 }
 
-// Clean up old review files that are no longer in the content directory
-async function cleanupOldReviews(currentReviewIds) {
+// Clean up old Project files that are no longer in the content directory
+async function cleanupOldProjects(currentProjectIds) {
     try {
-        // Get list of all files in the reviews output directory
-        const files = await fs.readdir(reviewsOutputDir);
+        // Get list of all files in the Projects output directory
+        const files = await fs.readdir(ProjectsOutputDir);
         
         // For each file in the output directory
         for (const file of files) {
             // Only process HTML files
             if (file.endsWith('.html')) {
-                const reviewId = file.replace('.html', '');
+                const ProjectId = file.replace('.html', '');
                 
-                // If the review is not in our current list, remove it
-                if (!currentReviewIds.includes(reviewId)) {
-                    await removeFile(path.join(reviewsOutputDir, file));
+                // If the Project is not in our current list, remove it
+                if (!currentProjectIds.includes(ProjectId)) {
+                    await removeFile(path.join(ProjectsOutputDir, file));
                 }
             }
         }
     } catch (err) {
         // If directory doesn't exist yet, that's fine
         if (err.code !== 'ENOENT') {
-            console.error('Error cleaning up old reviews:', err);
+            console.error('Error cleaning up old posts:', err);
         }
     }
 }
 
-// Generate all review pages (formerly project pages)
-async function generateReviewPages() {
+// Generate all Project pages (formerly project pages)
+async function generateProjectPages() {
     // Read project template
-    const reviewTemplate = await readTemplate('project'); // Still using project.html template
+    const ProjectTemplate = await readTemplate('project'); // Still using project.html template
 
-    // Ensure review directory exists
-    await ensureDir(reviewsOutputDir);
+    // Ensure Project directory exists
+    await ensureDir(ProjectsOutputDir);
 
     // Read all content directories
     const dirs = await fs.readdir(contentDir, { withFileTypes: true });
     const contentDirs = dirs.filter(dir => dir.isDirectory());
 
     // Generate a page for each content directory
-    const reviews = [];
-    const reviewIds = [];
+    const Projects = [];
+    const ProjectIds = [];
 
     for (const dir of contentDirs) {
         try {
-            const reviewId = dir.name;
-            reviewIds.push(reviewId); // Add to list of current IDs for cleanup later
-            console.log(`Processing review: ${reviewId}`);
+            const ProjectId = dir.name;
+            ProjectIds.push(ProjectId); // Add to list of current IDs for cleanup later
+            console.log(`Processing Project: ${ProjectId}`);
 
             // Read metadata and content
-            const metadataPath = path.join(contentDir, reviewId, 'metadata.json');
-            const contentPath = path.join(contentDir, reviewId, 'content.md');
+            const metadataPath = path.join(contentDir, ProjectId, 'metadata.json');
+            const contentPath = path.join(contentDir, ProjectId, 'content.md');
 
             const [metadataContent, markdownContent] = await Promise.all([
                 fs.readFile(metadataPath, 'utf-8'),
@@ -163,17 +141,17 @@ async function generateReviewPages() {
             
             // Skip items that aren't published
             if (!isPublished(metadata)) {
-                console.log(`Skipping ${reviewId} - status: ${metadata.status || 'undefined'}`);
+                console.log(`Skipping ${ProjectId} - status: ${metadata.status || 'undefined'}`);
                 continue;
             }
             
             const htmlContent = marked(markdownContent);
 
-            // Store review data for the index page
-            reviews.push({
+            // Store Project data for the index page
+            Projects.push({
                 ...metadata,
-                id: reviewId,
-                url: `/review/${reviewId}.html` // Updated path
+                id: ProjectId,
+                url: `/Project/${ProjectId}.html` // Updated path
             });
 
             // Format date
@@ -185,43 +163,42 @@ async function generateReviewPages() {
                 .join('');
 
             // Apply template
-            const html = applyTemplate(reviewTemplate, {
+            const html = applyTemplate(ProjectTemplate, {
                 title: metadata.title,
                 description: metadata.description,
                 date: formattedDate,
                 tags: tagsHtml,
                 content: htmlContent,
-                author: metadata.author || 'Unknown Author'
             });
 
             // Write output file
-            const outputPath = path.join(reviewsOutputDir, `${reviewId}.html`);
+            const outputPath = path.join(ProjectsOutputDir, `${ProjectId}.html`);
             await fs.writeFile(outputPath, html);
 
             console.log(`Generated: ${outputPath}`);
         } catch (err) {
-            console.error(`Error processing review ${dir.name}:`, err);
+            console.error(`Error processing Project ${dir.name}:`, err);
         }
     }
 
-    // Clean up old review files
-    await cleanupOldReviews(reviewIds);
+    // Clean up old Project files
+    await cleanupOldProjects(ProjectIds);
 
-    return reviews;
+    return Projects;
 }
 
 // Update the generateHomePage function in build.js to add sorting
 // Here's the modified function:
 
-async function generateHomePage(reviews) {
-    // Sort reviews by date (newest first)
-    reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+async function generateHomePage(Projects) {
+    // Sort Projects by date (newest first)
+    Projects.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     // Read index template
     const indexTemplate = await readTemplate('index');
 
-    // Generate review cards HTML
-    let reviewCardsHtml = '';
+    // Generate Project cards HTML
+    let ProjectCardsHtml = '';
     let showMoreBtn = '';
     
     // Add sorting controls HTML
@@ -229,50 +206,41 @@ async function generateHomePage(reviews) {
     <div class="sorting-controls">
       <div class="sort-options">
         <button class="sort-btn active" data-sort="date">Newest First</button>
-        <button class="sort-btn" data-sort="rating">Highest Rating</button>
       </div>
     </div>
     `;
 
-    // If there are no reviews, show an empty state card
-    if (reviews.length === 0) {
-        reviewCardsHtml = `
+    // If there are no Projects, show an empty state card
+    if (Projects.length === 0) {
+        ProjectCardsHtml = `
         <div class="project-card">
           <h3>Empty</h3>
-          <p>I have not yet posted any book reviews. Check back soon!</p>
+          <p>No posts yet. Check back soon.</p>
         </div>
       `;
     } else {
-        // Generate cards for existing reviews
-        reviewCardsHtml = reviews.map((review, index) => {
+        // Generate cards for existing Projects
+        ProjectCardsHtml = Projects.map((Project, index) => {
             const isHidden = index >= 6 ? ' hidden' : '';
             
-            const tagsHtml = review.tags
+            const tagsHtml = Project.tags
               .map(tag => `<span class="tag">${tag}</span>`)
               .join('');
             
-            const formattedDate = new Date(review.date).toLocaleDateString();
-            
-            // Get star rating class from our helper function
-            const starRatingClass = getRatingClass(review.rating);
-            
-            // Convert rating to 5-scale for display
-            const displayRating = review.rating ? (review.rating / 2).toFixed(1) : '0.0';
+            const formattedDate = new Date(Project.date).toLocaleDateString();
             
             // Add data attributes for sorting
             return `
-              <div class="project-card${isHidden}" data-index="${index}" data-date="${review.date}" data-rating="${review.rating}">
-                <a href="${review.url}" class="project-card-link" aria-label="View ${review.title}"></a>
-                <h3>${review.title}</h3>
-                <p>${review.description}</p>
+              <div class="project-card${isHidden}" data-index="${index}" data-date="${Project.date}">
+                <a href="${Project.url}" class="project-card-link" aria-label="View ${Project.title}"></a>
+                <h3>${Project.title}</h3>
+                <p>${Project.description}</p>
                 <div class="project-footer">
                   <div class="project-tags">
                     ${tagsHtml}
                   </div>
                   <div class="card-meta">
                     <div class="date-display">${formattedDate}</div>
-                    <div class="star-rating" aria-label="Rating: ${displayRating} out of 5 stars">
-                      <span class="stars ${starRatingClass}"></span>
                     </div>
                   </div>
                 </div>
@@ -280,10 +248,10 @@ async function generateHomePage(reviews) {
             `;
           }).join('');
 
-        if (reviews.length > 6) {
+        if (Projects.length > 6) {
             showMoreBtn = `
           <div class="show-more-container">
-            <a id="showMoreBtn" class="btn">Show More Reviews</a>
+            <a id="showMoreBtn" class="btn">Show More Projects</a>
           </div>
         `;
         }
@@ -315,13 +283,6 @@ async function generateHomePage(reviews) {
             const aDate = new Date(a.dataset.date);
             const bDate = new Date(b.dataset.date);
             return bDate - aDate;
-          });
-        } else if (sortBy === 'rating') {
-          // Sort by rating (highest first)
-          sortedCards = [...projectCards].sort((a, b) => {
-            const aRating = parseFloat(a.dataset.rating);
-            const bRating = parseFloat(b.dataset.rating);
-            return bRating - aRating;
           });
         }
         
@@ -374,15 +335,15 @@ async function generateHomePage(reviews) {
 
     // Apply template
     let html = applyTemplate(indexTemplate, {
-        projectCards: reviewCardsHtml,
+        projectCards: ProjectCardsHtml,
         showMoreBtn: showMoreBtn,
         currentYear: new Date().getFullYear()
     });
     
     // Insert sorting controls before the projects-grid div
-    html = html.replace('<h2 class="section-title">Book Reviews</h2>', 
+    html = html.replace('<h2 class="section-title">Posts</h2>', 
         `<div class="section-header">
-          <h2 class="section-title">Book Reviews</h2>
+          <h2 class="section-title">Posts</h2>
           ${sortingControlsHtml}
         </div>`
       );
@@ -479,9 +440,9 @@ async function build() {
 
         await ensureDir(publicDir);
 
-        const reviews = await generateReviewPages();
+        const Projects = await generateProjectPages();
 
-        await generateHomePage(reviews);
+        await generateHomePage(Projects);
 
         await generateAboutPage();
 

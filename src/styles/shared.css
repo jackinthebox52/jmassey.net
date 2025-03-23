@@ -1,17 +1,11 @@
-/*:root {
-    --primary-dark: #6b9080;
-    --secondary-dark: #a4c3b2;
-    --mint-green: #cce3de;
-    --primary-background: #ecfbe5;
-}*/
-
 :root {
-    --primary-dark: #556b2f ;
+    --primary-dark: #789b93;
     --secondary-dark: #a4c3b2;
     --mint-green: #cce3de;
-    --primary-mid: #ceddb1;
-    --primary-background: #edf5f0;
+    --primary-mid: #eaf4f4;
+    --primary-background: #f6fff8;
 }
+
 
 * {
     margin: 0;
