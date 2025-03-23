@@ -1,6 +1,6 @@
 {
     "title": "Markdown CMS",
-    "description": "Wordpress is bloat. Create your own simple content management system powered by node and markedjs. jmassey.net was built using this method.",
+    "description": "Wordpress is bloat. Create your own simple content management system powered by node and markedjs. This site itself is a markdown based CMS.",
     "date": "2022-02-11",
     "tags": ["JavaScript", "CMS", "Markdown", "jmassey.net"],
     "status": "published"

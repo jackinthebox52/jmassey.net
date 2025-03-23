@@ -2,10 +2,15 @@ const fs = require('fs').promises;
 const path = require('path');
 const { marked } = require('marked');
 
+
 marked.setOptions({
+    highlight: function(code, lang) {
+      return code; // Just return the code as is, let PrismJS handle it
+    },
+    langPrefix: 'language-', // Adds the language- prefix to the class for PrismJS
     gfm: true,
-    breaks: true,
-});
+    breaks: true
+  });
 
 // Paths
 const contentDir = path.join(__dirname, '..', 'content');
@@ -358,80 +363,87 @@ async function generateHomePage(Projects) {
     console.log(`Generated: ${outputPath}`);
 }
 
-// Copy static assets
 async function copyStaticAssets() {
     try {
-        // Copy CSS files
-        const cssSourceDir = path.join(__dirname, '..', 'src', 'styles');
-        const cssDestDir = path.join(publicDir, 'styles');
-
-        await ensureDir(cssDestDir);
-
-        // List of CSS directories to copy
-        const cssDirs = [
-            'components'
-            // 'prism-themes' removed since you don't need Prism
-        ];
-
-        // Copy each CSS directory
-        for (const dir of cssDirs) {
-            const sourceDir = path.join(cssSourceDir, dir);
-            const destDir = path.join(cssDestDir, dir);
-
-            await ensureDir(destDir);
-
-            const files = await fs.readdir(sourceDir);
-            for (const file of files) {
-                if (file.endsWith('.css')) {
-                    await fs.copyFile(
-                        path.join(sourceDir, file),
-                        path.join(destDir, file)
-                    );
-                }
-            }
-        }
-
-        // Copy root CSS files
-        const rootCssFiles = await fs.readdir(cssSourceDir);
-        for (const file of rootCssFiles) {
-            const filePath = path.join(cssSourceDir, file);
-            const stat = await fs.stat(filePath);
-
-            if (file.endsWith('.css') && !stat.isDirectory()) {
-                await fs.copyFile(
-                    filePath,
-                    path.join(cssDestDir, file)
-                );
-            }
-        }
-
-        // Copy JavaScript files if needed
-        const jsSourceDir = path.join(__dirname, '..', 'src', 'js');
-        const jsDestDir = path.join(publicDir, 'js');
-
+      // Copy CSS files
+      const cssSourceDir = path.join(__dirname, '..', 'src', 'styles');
+      const cssDestDir = path.join(publicDir, 'styles');
+  
+      await ensureDir(cssDestDir);
+  
+      // List of CSS directories to copy
+      const cssDirs = [
+        'components',
+        'prism-themes' // Added prism-themes directory
+      ];
+  
+      // Copy each CSS directory
+      for (const dir of cssDirs) {
+        const sourceDir = path.join(cssSourceDir, dir);
+        const destDir = path.join(cssDestDir, dir);
+  
+        await ensureDir(destDir);
+  
         try {
-            await ensureDir(jsDestDir);
-
-            const jsFiles = await fs.readdir(jsSourceDir);
-            for (const file of files) {
-                if (file.endsWith('.js')) {
-                    await fs.copyFile(
-                        path.join(jsSourceDir, file),
-                        path.join(jsDestDir, file)
-                    );
-                }
+          const files = await fs.readdir(sourceDir);
+          for (const file of files) {
+            if (file.endsWith('.css')) {
+              await fs.copyFile(
+                path.join(sourceDir, file),
+                path.join(destDir, file)
+              );
             }
+          }
         } catch (err) {
-            // It's okay if there are no JS files
-            console.log('No JS files to copy or JS directory does not exist');
+          if (err.code !== 'ENOENT') {
+            console.error(`Error reading directory ${sourceDir}:`, err);
+          } else {
+            console.log(`Directory ${dir} doesn't exist, skipping`);
+          }
         }
-
-        console.log('Copied static assets');
+      }
+  
+      // Copy root CSS files
+      const rootCssFiles = await fs.readdir(cssSourceDir);
+      for (const file of rootCssFiles) {
+        const filePath = path.join(cssSourceDir, file);
+        const stat = await fs.stat(filePath);
+  
+        if (file.endsWith('.css') && !stat.isDirectory()) {
+          await fs.copyFile(
+            filePath,
+            path.join(cssDestDir, file)
+          );
+        }
+      }
+  
+      // Copy JavaScript files
+      const jsSourceDir = path.join(__dirname, '..', 'src', 'js');
+      const jsDestDir = path.join(publicDir, 'js');
+  
+      try {
+        await ensureDir(jsDestDir);
+  
+        const jsFiles = await fs.readdir(jsSourceDir);
+        for (const file of jsFiles) { // Fixed variable name from 'files' to 'jsFiles'
+          if (file.endsWith('.js')) {
+            await fs.copyFile(
+              path.join(jsSourceDir, file),
+              path.join(jsDestDir, file)
+            );
+          }
+        }
+      } catch (err) {
+        // It's okay if there are no JS files
+        console.log('No JS files to copy or JS directory does not exist');
+      }
+  
+      console.log('Copied static assets');
     } catch (err) {
-        console.error('Error copying static assets:', err);
-        throw err; // Re-throw to be caught by the main build function
+      console.error('Error copying static assets:', err);
+      throw err; // Re-throw to be caught by the main build function
     }
-}
+  }
 
 // Main build function
 async function build() {
