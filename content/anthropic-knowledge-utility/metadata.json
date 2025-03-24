@@ -1,0 +1,7 @@
+{
+    "title": "Anthropic Knowledge Utility (aku.sh)",
+    "description": "A CLI utility for uploading documents to Claude projects",
+    "date": "2024-09-18",
+    "tags": ["Programming", "Bash", "Claude", "AI"],
+    "status": "published"
+}
