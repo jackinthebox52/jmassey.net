@@ -1,0 +1,7 @@
+{
+    "title": "Mail Truck Detector",
+    "description": "Is the mail here yet? A neural network to detect major U.S. mail carrier logos in video frames/images, based on MobileNet_v2",
+    "date": "2024-07-04",
+    "tags": ["Programming", "Tensorflow", "MobileNet_v2", "Python"],
+    "status": "published"
+}
