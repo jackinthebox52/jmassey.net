@@ -1,21 +1,10 @@
 /* Styles for the sorting controls */
 
+
 .sorting-controls {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.sort-label {
-    font-size: 0.9rem;
-    color: #666;
-    margin-right: 0.75rem;
-}
-
-.sort-options {
-    display: flex;
-    gap: 0.5rem;
+    margin: 0;
 }
 
 .sort-btn {
@@ -27,10 +16,29 @@
     font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 .sort-btn:hover {
     background-color: var(--mint-green);
+}
+
+.sort-arrow {
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.sort-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-right: 0.75rem;
+}
+
+.sort-options {
+    display: flex;
+    gap: 0.5rem;
 }
 
 .sort-btn.active {
@@ -60,18 +68,5 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
-}
-
-.sorting-controls {
-    margin: 0;
-}
-
-/* For responsive layout */
-@media screen and (max-width: 450px) {
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
+    color: var(--primary-dark);
 }

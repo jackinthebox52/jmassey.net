@@ -89,3 +89,5 @@ Available languages: All prismjs supported languages
 # TODO
 
 Implement a few post sorting mechanisms, the code is there in build.js but disabled becuase the replace target is missing in the index template.
+
+Add a github link value to the metadata that renders a github link on the project page
