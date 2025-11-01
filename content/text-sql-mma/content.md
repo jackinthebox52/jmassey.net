@@ -89,5 +89,3 @@ While this was just a proof of concept, the pattern works for a lot of real-worl
 The code is up on [GitHub](https://github.com/jackinthebox52/mma-qa). It's built specifically for MMA stats, but the pattern works for pretty much any structured data.
 
 This approach is much less resource intensive than training an LLM to memorize facts, and can be easily updated without spending tons of time and money retraining. It's alos way more reliable, and the resultingSQL can be run through a linter to verify that it will execute.
-
-I'll be working on a researach paper that compares some advanced text-SQL approaches in the near future, so keep an eye out at jmassey.net.
