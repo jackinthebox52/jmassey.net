@@ -1,7 +1,7 @@
 {
     "title": "bytestream: Local HLS Restreaming",
     "description": "A Docker-based HLS restreaming server with a extension for stream management",
-    "date": "2024-11-02",
+    "date": "2025-03-02",
     "tags": ["Programming", "Python", "Docker", "Firefox", "HLS", "Streaming"],
     "status": "published"
 }
