@@ -1,0 +1,7 @@
+{
+    "title": "CGNAT be Damned!",
+    "description": "A guide to exposing Docker containers behind CGNAT using a VPS, WireGuard tunnel, and Nginx reverse proxy",
+    "date": "2025-11-01",
+    "tags": ["Homelab", "Docker", "WireGuard", "Nginx", "CGNAT", "VPS", "Self-Hosting"],
+    "status": "published"
+}
