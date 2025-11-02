@@ -105,3 +105,7 @@ Honestly? I was tired of paying for rotating proxies when I already had a VPN su
 If you're in a similar boat, already paying for a VPN with lots of servers, need occasional IP rotation, comfortable with the command line, this might save you some money.
 
 I'll probably polish this up substantially and add wireguard support in the near future.
+
+## Git Repository
+
+The code is on GitHub at [https://github.com/jackinthebox52/rotating-ovpn](https://github.com/jackinthebox52/rotating-ovpn).
