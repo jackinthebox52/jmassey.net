@@ -222,7 +222,7 @@ Certbot will automatically modify your Nginx configs with HTTPS and handle cert 
 
 ## Adding New Services
 
-This stack is great because you don't have to do much to add new services and you can keep everything containerized.
+This stack is great because you don't have to do much to add new services, and you can keep everything containerized.
 
 To add a new service:
 
