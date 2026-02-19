@@ -1,6 +1,3 @@
-## Capstone Project: Creating An Agentic RAG System
-
-
 DocuSearch is a RAG-based document retrieval system built for personal injury and workers' compensation law firms. A paralegal should be able to ask "when did John last see a doctor about his knee?" and get a correct, sourced answer pulled from potentially hundreds of documents. This writeup covers the ingestion pipeline and retrieval system, including the decisions that shaped the architecture and the problems that forced them.
 
 The system is built in LangChain (TypeScript), backed by Qdrant as the vector store and PostgreSQL for conversation persistence. LLM inference runs through a configurable provider layer supporting both local models and remote APIs.
