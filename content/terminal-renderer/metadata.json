@@ -1,0 +1,7 @@
+{
+    "title": "Terminal Renderer",
+    "description": "A browser-based tool for generating styled terminal window screenshots from raw session text, built for college course presentations",
+    "date": "2026-08-23",
+    "tags": ["Programming", "JavaScript", "HTML", "Tools"],
+    "status": "published"
+}

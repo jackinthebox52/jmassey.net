@@ -206,6 +206,22 @@ async function generateProjectPages() {
       const outputPath = path.join(ProjectsOutputDir, `${ProjectId}.html`);
       await fs.writeFile(outputPath, html);
 
+      // Copy any non-content assets (images, etc.) to public/Project/{id}/
+      const contentAssetDir = path.join(contentDir, ProjectId);
+      const publicAssetDir = path.join(ProjectsOutputDir, ProjectId);
+      const assetFiles = await fs.readdir(contentAssetDir);
+      const skip = new Set(['content.md', 'metadata.json']);
+      const assets = assetFiles.filter(f => !skip.has(f));
+      if (assets.length > 0) {
+        await ensureDir(publicAssetDir);
+        for (const asset of assets) {
+          await fs.copyFile(
+            path.join(contentAssetDir, asset),
+            path.join(publicAssetDir, asset)
+          );
+        }
+      }
+
       console.log(`Generated: ${outputPath}`);
     } catch (err) {
       console.error(`Error processing Project ${dir.name}:`, err);

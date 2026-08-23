@@ -1,0 +1,7 @@
+{
+    "title": "Harmonic Memory Network",
+    "description": "Amateur machine learning research project. Adding periodic memory cells to an LSTM network.",
+    "date": "2026-04-12",
+    "tags": ["AI", "Research", "Memory", "LSTM", "Machine Learning"],
+    "status": "draft"
+}
