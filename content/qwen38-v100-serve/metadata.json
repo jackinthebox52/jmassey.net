@@ -1,0 +1,7 @@
+{
+    "title": "Serving Qwen3.8-27B Fast on a Tesla V100",
+    "description": "Two llama.cpp builds for long-context agentic workloads on Volta hardware: MTP speculative decoding versus a patched GQA-packing attention kernel.",
+    "date": "2026-09-05",
+    "tags": ["AI", "CUDA", "llama.cpp", "LLM", "GPU", "Programming"],
+    "status": "published"
+}
